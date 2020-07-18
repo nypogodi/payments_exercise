@@ -1,6 +1,6 @@
 class LoansController < ActionController::API
 
-  rescue_from ActiveRecord::RecordNotFound do |exception|
+  rescue_from ActiveRecord::RecordNotFound do |_|
     render json: 'not_found', status: :not_found
   end
 
