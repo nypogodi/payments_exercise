@@ -2,7 +2,7 @@ class Loan < ActiveRecord::Base
   has_many :payments
 
   def as_json(_opts = {})
-    super.merge(outstanding_balance: outstanding_balance)
+    super(methods: :outstanding_balance)
   end
 
   def outstanding_balance
